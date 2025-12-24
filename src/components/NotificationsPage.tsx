@@ -5,6 +5,15 @@ import { Badge } from '@/components/ui/badge';
 const notifications = [
   {
     id: 1,
+    type: 'challenge',
+    user: 'Система',
+    avatar: '/placeholder.svg',
+    action: 'Ты занял 23 место в "Танцевальном вызове"! 🏆',
+    time: '1 мин назад',
+    isNew: true,
+  },
+  {
+    id: 2,
     type: 'like',
     user: '@anna_vlog',
     avatar: '/placeholder.svg',
@@ -13,7 +22,7 @@ const notifications = [
     isNew: true,
   },
   {
-    id: 2,
+    id: 3,
     type: 'comment',
     user: '@tech_master',
     avatar: '/placeholder.svg',
@@ -22,7 +31,7 @@ const notifications = [
     isNew: true,
   },
   {
-    id: 3,
+    id: 4,
     type: 'follow',
     user: '@dance_queen',
     avatar: '/placeholder.svg',
@@ -31,7 +40,7 @@ const notifications = [
     isNew: true,
   },
   {
-    id: 4,
+    id: 5,
     type: 'gift',
     user: '@generous_fan',
     avatar: '/placeholder.svg',
@@ -40,7 +49,7 @@ const notifications = [
     isNew: false,
   },
   {
-    id: 5,
+    id: 6,
     type: 'like',
     user: '@music_lover',
     avatar: '/placeholder.svg',
@@ -49,7 +58,7 @@ const notifications = [
     isNew: false,
   },
   {
-    id: 6,
+    id: 7,
     type: 'comment',
     user: '@food_critic',
     avatar: '/placeholder.svg',
@@ -70,6 +79,8 @@ const NotificationsPage = () => {
         return <Icon name="UserPlus" className="text-[#FFBE0B]" size={20} />;
       case 'gift':
         return <Icon name="Gift" className="text-[#9b87f5]" size={20} />;
+      case 'challenge':
+        return <Icon name="Trophy" className="text-[#FFBE0B]" size={20} />;
       default:
         return <Icon name="Bell" className="text-muted-foreground" size={20} />;
     }

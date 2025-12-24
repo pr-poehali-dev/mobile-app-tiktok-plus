@@ -1,6 +1,6 @@
 import Icon from '@/components/ui/icon';
 
-type Page = 'home' | 'search' | 'upload' | 'notifications' | 'profile';
+type Page = 'home' | 'search' | 'upload' | 'notifications' | 'profile' | 'challenges';
 
 interface BottomNavProps {
   currentPage: Page;
@@ -10,9 +10,9 @@ interface BottomNavProps {
 const BottomNav = ({ currentPage, onPageChange }: BottomNavProps) => {
   const navItems = [
     { id: 'home' as Page, icon: 'Home', label: 'Главная' },
-    { id: 'search' as Page, icon: 'Search', label: 'Поиск' },
+    { id: 'challenges' as Page, icon: 'Trophy', label: 'Челленджи' },
     { id: 'upload' as Page, icon: 'PlusSquare', label: 'Добавить' },
-    { id: 'notifications' as Page, icon: 'Heart', label: 'Уведомления' },
+    { id: 'search' as Page, icon: 'Search', label: 'Поиск' },
     { id: 'profile' as Page, icon: 'User', label: 'Профиль' },
   ];
 

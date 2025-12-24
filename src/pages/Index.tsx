@@ -5,8 +5,9 @@ import SearchPage from '@/components/SearchPage';
 import UploadPage from '@/components/UploadPage';
 import NotificationsPage from '@/components/NotificationsPage';
 import ProfilePage from '@/components/ProfilePage';
+import ChallengesPage from '@/components/ChallengesPage';
 
-type Page = 'home' | 'search' | 'upload' | 'notifications' | 'profile';
+type Page = 'home' | 'search' | 'upload' | 'notifications' | 'profile' | 'challenges';
 
 const Index = () => {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -23,6 +24,8 @@ const Index = () => {
         return <NotificationsPage />;
       case 'profile':
         return <ProfilePage />;
+      case 'challenges':
+        return <ChallengesPage />;
       default:
         return <VideoFeed />;
     }
