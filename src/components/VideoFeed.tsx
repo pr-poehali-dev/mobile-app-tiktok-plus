@@ -1,7 +1,22 @@
 import { useState, useRef, useEffect } from 'react';
 import VideoCard from './VideoCard';
+import LiveStreamCard from './LiveStreamCard';
 
 const mockVideos = [
+  {
+    id: 0,
+    username: '@my_profile',
+    description: 'Прямой эфир! Общаемся и получаем донаты 🎁 #live #stream',
+    likes: 5678,
+    comments: 234,
+    shares: 89,
+    saves: 156,
+    videoUrl: '/placeholder.svg',
+    userAvatar: '/placeholder.svg',
+    isVerified: true,
+    isLive: true,
+    viewers: 1234,
+  },
   {
     id: 1,
     username: '@maria_dance',
@@ -13,6 +28,7 @@ const mockVideos = [
     videoUrl: '/placeholder.svg',
     userAvatar: '/placeholder.svg',
     isVerified: true,
+    isLive: false,
   },
   {
     id: 2,
@@ -25,6 +41,7 @@ const mockVideos = [
     videoUrl: '/placeholder.svg',
     userAvatar: '/placeholder.svg',
     isVerified: true,
+    isLive: false,
   },
   {
     id: 3,
@@ -37,6 +54,7 @@ const mockVideos = [
     videoUrl: '/placeholder.svg',
     userAvatar: '/placeholder.svg',
     isVerified: false,
+    isLive: false,
   },
   {
     id: 4,
@@ -49,6 +67,7 @@ const mockVideos = [
     videoUrl: '/placeholder.svg',
     userAvatar: '/placeholder.svg',
     isVerified: true,
+    isLive: false,
   },
   {
     id: 5,
@@ -61,6 +80,7 @@ const mockVideos = [
     videoUrl: '/placeholder.svg',
     userAvatar: '/placeholder.svg',
     isVerified: true,
+    isLive: false,
   },
 ];
 
@@ -121,9 +141,13 @@ const VideoFeed = () => {
         className="h-full transition-transform duration-300 ease-out"
         style={{ transform: `translateY(-${currentIndex * 100}vh)` }}
       >
-        {mockVideos.map((video) => (
-          <VideoCard key={video.id} video={video} />
-        ))}
+        {mockVideos.map((video) =>
+          video.isLive ? (
+            <LiveStreamCard key={video.id} video={video} />
+          ) : (
+            <VideoCard key={video.id} video={video} />
+          )
+        )}
       </div>
     </div>
   );
